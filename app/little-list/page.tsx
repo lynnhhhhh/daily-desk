@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Todo = {
@@ -117,6 +118,15 @@ export default function LittleListPage() {
   return (
     <main className="min-h-screen w-full bg-[#F7F4EE] px-4 py-10 text-[#2F2F2F]">
       <div className="mx-auto w-full max-w-md space-y-6">
+        <div className="text-left">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1 text-sm text-[#E6A57E] transition-colors hover:text-[#D08F63]"
+          >
+            ← 回到 Daily Desk
+          </Link>
+        </div>
+
         <header className="space-y-3 text-center">
           <p className="text-xs font-medium tracking-[0.25em] text-[#9C9284] uppercase">
             Today&apos;s Little List
@@ -139,17 +149,17 @@ export default function LittleListPage() {
           >
             <label className="block">
               <span className="text-sm text-[#9C9284]">今天想完成什麼？</span>
-              <div className="mt-1 flex gap-2">
+              <div className="mt-1 flex flex-col gap-2 sm:flex-row">
                 <input
                   type="text"
                   value={newText}
                   onChange={(e) => setNewText(e.target.value)}
                   placeholder="寫下一件今天的事……"
-                  className="flex-1 rounded-xl border border-[#E3DED4] bg-white px-3 py-2 text-[#2F2F2F] focus:ring-2 focus:ring-[#E6A57E] focus:outline-none"
+                  className="w-full min-w-0 rounded-xl border border-[#E3DED4] bg-white px-3 py-2 text-[#2F2F2F] focus:ring-2 focus:ring-[#E6A57E] focus:outline-none sm:flex-1"
                 />
                 <button
                   type="submit"
-                  className="rounded-xl bg-[#E6A57E] px-4 py-2 font-semibold whitespace-nowrap text-white transition-colors hover:bg-[#D08F63]"
+                  className="w-full rounded-xl bg-[#E6A57E] px-4 py-2 font-semibold whitespace-nowrap text-white transition-colors hover:bg-[#D08F63] sm:w-auto"
                 >
                   放進今天
                 </button>

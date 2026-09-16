@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 const QUICK_ADD_AMOUNTS = [250, 500];
@@ -69,6 +70,15 @@ export default function WaterPausePage() {
   return (
     <main className="min-h-screen w-full bg-[#F7F4EE] px-4 py-10 text-[#2F2F2F]">
       <div className="mx-auto w-full max-w-md space-y-6">
+        <div className="text-left">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1 text-sm text-[#AFC8D8] transition-colors hover:text-[#93AFC0]"
+          >
+            ← 回到 Daily Desk
+          </Link>
+        </div>
+
         <header className="space-y-3 text-center">
           <p className="text-xs font-medium tracking-[0.25em] text-[#9C9284] uppercase">
             Hydration Break
@@ -165,7 +175,7 @@ export default function WaterPausePage() {
           >
             <label className="block">
               <span className="text-sm text-[#9C9284]">這一杯有多少？</span>
-              <div className="mt-1 flex gap-2">
+              <div className="mt-1 flex flex-col gap-2 sm:flex-row">
                 <input
                   type="number"
                   min={0}
@@ -175,11 +185,11 @@ export default function WaterPausePage() {
                     setCustomAmount(e.target.value);
                     if (customError) setCustomError(false);
                   }}
-                  className="flex-1 rounded-xl border border-[#E3DED4] bg-white px-3 py-2 text-[#2F2F2F] focus:ring-2 focus:ring-[#AFC8D8] focus:outline-none"
+                  className="w-full min-w-0 rounded-xl border border-[#E3DED4] bg-white px-3 py-2 text-[#2F2F2F] focus:ring-2 focus:ring-[#AFC8D8] focus:outline-none sm:flex-1"
                 />
                 <button
                   type="submit"
-                  className="rounded-xl bg-[#AFC8D8] px-4 py-2 font-semibold whitespace-nowrap text-white transition-colors hover:bg-[#93AFC0]"
+                  className="w-full rounded-xl bg-[#AFC8D8] px-4 py-2 font-semibold whitespace-nowrap text-white transition-colors hover:bg-[#93AFC0] sm:w-auto"
                 >
                   記下這一杯
                 </button>

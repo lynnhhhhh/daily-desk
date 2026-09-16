@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
 
 const FISH_IMAGE_SIZE = { width: 176, height: 147 };
@@ -396,6 +397,15 @@ export default function QuietCardPage() {
       )}
 
       <div className="mx-auto w-full max-w-md space-y-6">
+        <div className="text-left">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1 text-sm text-[#B8AEC7] transition-colors hover:text-[#9C8FB3]"
+          >
+            ← 回到 Daily Desk
+          </Link>
+        </div>
+
         <header className="space-y-3 text-center">
           <p className="text-xs font-medium tracking-[0.25em] text-[#9C9284] uppercase">
             Pause & Reset
@@ -599,18 +609,18 @@ export default function QuietCardPage() {
               e.preventDefault();
               addCustomCard();
             }}
-            className="flex gap-2"
+            className="flex flex-col gap-2 sm:flex-row"
           >
             <input
               type="text"
               value={newCardText}
               onChange={(e) => setNewCardText(e.target.value)}
               placeholder="寫下一句想提醒自己的話……"
-              className="flex-1 rounded-xl border border-[#E3DED4] bg-white px-3 py-2 text-[#2F2F2F] focus:ring-2 focus:ring-[#B8AEC7] focus:outline-none"
+              className="w-full min-w-0 rounded-xl border border-[#E3DED4] bg-white px-3 py-2 text-[#2F2F2F] focus:ring-2 focus:ring-[#B8AEC7] focus:outline-none sm:flex-1"
             />
             <button
               type="submit"
-              className="rounded-xl bg-[#B8AEC7] px-4 py-2 font-semibold whitespace-nowrap text-white transition-colors hover:bg-[#9C8FB3]"
+              className="w-full rounded-xl bg-[#B8AEC7] px-4 py-2 font-semibold whitespace-nowrap text-white transition-colors hover:bg-[#9C8FB3] sm:w-auto"
             >
               收進籤筒
             </button>

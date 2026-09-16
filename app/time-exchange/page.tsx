@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 const REMINDER_WINDOW_MS = 30 * 60 * 1000;
@@ -164,6 +165,15 @@ export default function SalaryThiefPage() {
   return (
     <main className="min-h-screen w-full bg-[#F7F4EE] px-4 py-10 text-[#2F2F2F]">
       <div className="mx-auto w-full max-w-md space-y-6">
+        <div className="text-left">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1 text-sm text-[#7F9B87] transition-colors hover:text-[#6C8473]"
+          >
+            ← 回到 Daily Desk
+          </Link>
+        </div>
+
         <header className="space-y-3 text-center">
           <p className="text-xs font-medium tracking-[0.25em] text-[#9C9284] uppercase">
             Time Exchange
